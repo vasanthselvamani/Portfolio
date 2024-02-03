@@ -1,13 +1,218 @@
-body {
+/*--- google font---*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*=========variables colors======*/
+:root {
+  --header-height:3rem;
+
+  /*=========colors======*/
+  /*color mode hsl (hue ,saturation,lightness)*/
+  --absoluteblack: rgba(0, 0, 0, 1);
+  --absolutewhite: rgba(255, 255, 255, 1);
+  --grey-10: rgba(26, 26, 26, 1);
+  --grey-20: rgba(51, 51, 51, 1);
+  --grey-30: rgba(77, 77, 77, 1);
+  --grey-40: rgba(102, 102, 102, 1);
+  --grey-50: rgba(128, 128, 128, 1);
+  --grey-60: rgba(153, 153, 153, 1);
+  --grey-70: rgba(179, 179, 179, 1);
+  --grey-80: rgba(204, 204, 204, 1);
+  --other-colorsblue: rgba(34, 96, 255, 1);
+  --other-colorsgreen: rgba(94, 220, 17, 1);
+  --other-colorsorange: rgba(255, 114, 34, 1);
+  --other-colorspink: rgba(255, 34, 233, 1);
+  --other-colorspurple: rgba(158, 0, 255, 1);
+  --other-colorsyellow: rgba(255, 206, 34, 1);
+  --peach-85: rgba(225, 219, 209, 1);
+  --peach-90: rgba(235, 231, 224, 1);
+  --peach-92: rgba(238, 235, 229, 1);
+  --peach-95: rgba(245, 243, 240, 1);
+  --peach-96: rgba(247, 246, 243, 1);
+  --peach-97: rgba(249, 248, 246, 1);
+  --peach-98: rgba(251, 250, 249, 1);
+  --peach-99: rgba(253, 253, 252, 1);
+  --purple-50: rgba(87, 0, 255, 1);
+  --purple-60: rgba(120, 51, 255, 1);
+  --purple-70: rgba(154, 102, 255, 1);
+  --purple-80: rgba(188, 153, 255, 1);
+  --purple-90: rgba(221, 204, 255, 1);
+  --purple-95: rgba(238, 229, 255, 1);
+  --purple-97: rgba(245, 240, 255, 1);
+  --purple-99: rgba(252, 250, 255, 1);
+
+   /*=========font and typography======*/
+   --body-font:"poppins","sans-serif";
+
+
+   --big-font-size :3.5rem;
+   --h1-font-size:2.25rem;
+   --h2-font-size:1.5rem;
+   --h3-font-size:1.25rem;
+   --normal-font-size:1rem;
+   --small-font-size:0.875rem;
+   --smaller-font-size:0.813rem;
+   --tiny-font-size:0.625rem;
+
+    /*=========font weight======*/
+
+    --font-normal:400;
+    --font-medium:500;
+    --font-semi-bold:600;
+
+     /*=========margenes bottom ======*/
+     --mb-0-25:0.25rem;
+     --mb-0-5:0.5rem;
+     --mb-0-75:0.75rem;
+     --mb-0-25:0.25rem;
+     --mb-1:1rem;
+     --mb-1-5:1.5rem;
+     --mb-2:2rem;
+     --mb-2-5:2.5rem;
+     --mb-3:3rem;
+
+      /*========= z index ======*/
+      --z-tooltip:10;
+      --z-fixed:100;
+      --z-modal:1000;
+}
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ html{
+  scroll-behavior: smooth;
+ }
+ body,button,input,textarea{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+body{
+  background-color: var(--peach-92);
+  color: var(--grey-20);
+}
+h1,h2,h3{
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.button{
+  display: inline-block;
+  background-color: var(--purple-50);
+  color: var(--peach-85);
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-weight: var(--font-medium);
+}
+.container{
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.grid{
+  display: grid;
+  gap: 1.5rem;
+  
+}
+.section{
+  padding: 3rem 0 2rem;
+}
+.section__title{
+  font-size:var(--h1-font-size) ;
+  color: var(--grey-10);
+}
+.section__subtitle{
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 4rem;
+}
+.section__subtitle1{
+  display: block;
+  font-size: var(--smaller-font-size);
+  margin-bottom: 4rem;
+}
+.section__header{
+  font-size: var(--h3-font-size);
+  color: var(--grey-10);
+  font-weight: 500;
+}
+.section__subtitle,.section__title,.section__header{
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (max-width:992px) {
+  .container{
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+  .button{
+    padding: 1rem 1.75rem;
+  }
+  .button__icon{
+    width: 22px;
+    height: 22px;
+  }
 }
+/*======= for medium devices==========*/
+@media screen  and (max-width:768px){
+  .section{
+    padding: 2rem 0 4rem;
+  }
+  
+  
+}
+@media screen and (max-width:576px) {
+  
+}
+ /*======= for small devices==========*/
+ @media screen and (max-width:350px) {
+  :root {
+    --big-font-size:2.25rem;
+  }
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+ }
+
+ 
+       /*=========responsive typograpy======*/
+
+       @media screen and (max-width:992px) {
+        :root {
+          --big-font-size:2.75rem;
+          --h1-font-size:1.5rem;
+          --h2-font-size:1.25rem;
+          --h3-font-size:1rem;
+          --normal-font-size:0.938rem;
+          --small-font-size:0.813rem;
+          --smaller-font-size:0.75rem;
+        }
+       }
+       @media screen and (max-width:500px) {
+        :root {
+          --big-font-size:1.75rem;
+          --h1-font-size:1rem;
+          --h2-font-size:1rem;
+          --h3-font-size:0.999rem;
+          --normal-font-size:0.935rem;
+          --small-font-size:0.809rem;
+          --smaller-font-size:0.69rem;
+        }
+       }
+
+  

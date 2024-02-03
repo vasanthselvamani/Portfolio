@@ -1,0 +1,109 @@
+.about{
+    padding: 7rem 0 2rem;
+}
+.about__grid{
+    grid-template-columns: repeat(2, 1fr);
+}
+.button__cv{
+    text-align:left;
+}
+.subtitle{
+    font-size: var(--small-font-size);
+    margin-bottom: 3rem;
+}
+.timeline-section{
+	background-color:var(--grey-20);
+	min-height: 100vh;
+	padding: 100px 15px;
+}
+.timeline-items{
+	max-width: 1000px;
+	margin:auto;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+.timeline-items::before{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	background-color:var(--grey-20);
+	left: calc(50% - 1px);
+}
+.timeline-item{
+	margin-bottom: 40px;
+	width: 100%;
+	position: relative;
+}
+.timeline-item:last-child{
+	margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+	text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+	height: 16px;
+	width: 16px;
+	background-image: radial-gradient(circle,rgba(158, 0, 255, 1) 30%, white 20%,  white 60%);
+	position: absolute;
+	left: calc(50% - 8px);
+	border-radius: 50%;
+	top:10px;
+}
+.timeline-date{
+	font-size: 18px;
+	color: var(--other-colorspurple);
+	margin:6px 0 15px;
+}
+.timeline-content{
+    background-color: var(--peach-99);
+	padding: 30px;
+	border-radius: 5px;
+}
+.timeline-content h3{
+    font-size: var(--h3-font-size);
+	color: var(--grey-20);
+	margin:0 0 10px;
+	text-transform: capitalize;
+	font-weight: 500;
+}
+.timeline-content p{
+    color: var(--grey-20);
+	font-size:var(--smaller-font-size);
+	font-weight: 300;
+	line-height: 22px;
+}
+.timeline-content{
+    display: flex;
+}
+.image__icon{
+    margin:auto;
+    padding: 1rem;
+    width: 200px;
+}
+
+
+@media screen and (max-width: 772px) {
+    .about__grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .timeline-items::before{
+		left: 7px;
+	}
+	.timeline-item:nth-child(odd){
+		padding-right: 0;
+		text-align: left;
+	}
+	.timeline-item:nth-child(odd),
+	.timeline-item:nth-child(even){
+		padding-left: 37px;
+	}
+	.timeline-dot{
+		left:0;
+	}
+}
